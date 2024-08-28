@@ -24,7 +24,7 @@ public class TodoController {
     }
 
     @GetMapping(value = "/{id}")
-    public TodoDTO getTodo(@PathVariable Long id) {
+    public TodoDTO getTodo(@PathVariable String id) {
         return todoService.getTodo(id);
     }
 
@@ -34,13 +34,13 @@ public class TodoController {
     }
 
     @PutMapping(value = "/{id}")
-    public TodoDTO updateTodo(@PathVariable Long id,
+    public TodoDTO updateTodo(@PathVariable String id,
                               @RequestBody TodoRequest todoRequest) {
         return todoService.updateTodo(id, todoConverter.toEntity(todoRequest));
     }
 
     @DeleteMapping(value = "/{id}")
-    public TodoDTO deleteTodo(@PathVariable Long id) {
+    public TodoDTO deleteTodo(@PathVariable String id) {
         return todoService.deleteTodo(id);
     }
 

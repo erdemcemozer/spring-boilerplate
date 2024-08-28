@@ -12,11 +12,13 @@ import java.util.Date;
 @NoArgsConstructor
 public class TodoDTO {
 
-    private Long id;
+    private String id;
+
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createDate;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateDate;
+
     private String title;
     private String description;
     private Boolean finished;

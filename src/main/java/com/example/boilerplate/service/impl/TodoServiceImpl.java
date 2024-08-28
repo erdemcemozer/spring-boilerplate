@@ -29,7 +29,7 @@ public class TodoServiceImpl implements TodoService {
     }
 
     @Override
-    public TodoDTO updateTodo(Long id, Todo todo) {
+    public TodoDTO updateTodo(String id, Todo todo) {
         log.info("[TodoServiceImpl] updateTodo with id::{}", id);
         Optional<Todo> optionalTodo = todoRepository.findById(id);
 
@@ -46,7 +46,7 @@ public class TodoServiceImpl implements TodoService {
     }
 
     @Override
-    public TodoDTO deleteTodo(Long id) {
+    public TodoDTO deleteTodo(String id) {
         log.info("[TodoServiceImpl] deleteTodo with id::{}", id);
         return todoRepository.findById(id)
                 .map(todo -> {
@@ -73,7 +73,7 @@ public class TodoServiceImpl implements TodoService {
     }
 
     @Override
-    public TodoDTO getTodo(Long id) {
+    public TodoDTO getTodo(String id) {
         log.info("[TodoServiceImpl] getTodo with id::{}", id);
         return todoConverter
                 .toDTO(todoRepository

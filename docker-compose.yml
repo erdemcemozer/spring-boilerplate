@@ -1,22 +1,6 @@
 version: '3.8'
 
 services:
-  db:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: postgres
-    environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
-      POSTGRES_DB: admin
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    networks:
-      - my_network
-
   mongodb:
     image: mongo:latest
     container_name: mongo
@@ -29,7 +13,6 @@ services:
 
 volumes:
   mongo_data:
-  postgres_data:
 
 networks:
   my_network:
