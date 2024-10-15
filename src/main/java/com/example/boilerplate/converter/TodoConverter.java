@@ -23,9 +23,9 @@ public class TodoConverter {
     public Todo toEntity(TodoRequest request) {
         return Todo
                 .builder()
-                .title(request.getTitle())
-                .description(request.getDescription())
-                .finished(request.getFinished())
+                .title(request.title())
+                .description(request.description())
+                .finished(request.finished())
                 .build();
     }
 }
